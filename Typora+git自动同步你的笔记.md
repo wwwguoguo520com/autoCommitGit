@@ -189,34 +189,38 @@ git remote add origin git@u1.github.com:xxx/xxxxx.git
        现在我通过命令行在桌面新建一个TEST文件夹（你也可以在其他任何地方创建这个文件夹），并且进入这个文件夹
 
 
-​                                          
+​                                          ![img](Typora+git自动同步你的笔记.assets/20170414161402727)
 
 
        第二步：通过命令git init把这个文件夹变成Git可管理的仓库
 
 
-​       
+​       ![img](Typora+git自动同步你的笔记.assets/20170414161902115)
 
        这时你会发现TEST里面多了个.git文件夹，它是Git用来跟踪和管理版本库的。如果你看不到，是因为它默认是隐藏文件，那你就需要设置一下让隐藏文件可见。
 
 
-​       
+​       ![img](Typora+git自动同步你的笔记.assets/20170414162459663)
        第三步：这时候你就可以把你的项目粘贴到这个本地Git仓库里面（粘贴后你可以通过git status来查看你当前的状态），然后通过git add把项目添加到仓库（或git add .把该目录下的所有文件添加到仓库，注意点是用空格隔开的）。在这个过程中你其实可以一直使用git status来查看你当前的状态。
 
 
-​       
+​          ![img](Typora+git自动同步你的笔记.assets/20170414163732836)
+
+​    ![img](Typora+git自动同步你的笔记.assets/20170414164056636)
 
 
        这里提示你虽然把项目粘贴过来了，但还没有add到Git仓库上，然后我们通过git add .把刚才复制过来的项目全部添加到仓库上。
 
 
-​       
+​         ![img](Typora+git自动同步你的笔记.assets/20170414163839578)
+
+​    ![img](Typora+git自动同步你的笔记.assets/20170414164422518)
 
 
         第四步：用git commit把项目提交到仓库。
 
 
-​        
+​         ![img](Typora+git自动同步你的笔记.assets/20170414164738754)
 
         -m后面引号里面是本次提交的注释内容，这个可以不写，但最好写上，不然会报错，详情自行Google。 好了，我们本地Git仓库这边的工作做完了，下面就到了连接远程仓库（也就是连接Github）
     
@@ -224,9 +228,13 @@ git remote add origin git@u1.github.com:xxx/xxxxx.git
     
       第五步：创建SSH KEY。先看一下你C盘用户目录下有没有.ssh目录，有的话看下里面有没有id_rsa和id_rsa.pub这两个文件，有就跳到下一步，没有就通过下面命令创建
 
+
+
+ **上面创建了这里就不需要创建了**
+
    $ ssh-keygen -t rsa -C "youremail@example.com"
         然后一路回车。这时你就会在用户下的.ssh目录里找到id_rsa和id_rsa.pub这两个文件   
-       
+       ![img](Typora+git自动同步你的笔记.assets/20170414170253668) 
 
       第六步：登录Github,找到右上角的图标，打开点进里面的Settings，再选中里面的SSH and GPG KEYS，点击右上角的New SSH key，然后Title里面随便填，再把刚才id_rsa.pub里面的内容复制到Title下面的Key内容框里面，最后点击Add SSH key，这样就完成了SSH Key的加密。具体步骤也可看下面：
 
@@ -234,23 +242,45 @@ git remote add origin git@u1.github.com:xxx/xxxxx.git
 ​       
 
 
-​    
+​        ![img](Typora+git自动同步你的笔记.assets/20170414204647937)
 
-        第七步：在Github上创建一个Git仓库。
-    
-     你可以直接点New repository来创建，比如我创建了一个TEST2的仓库（因为我里面已经有了一个test的仓库，所以不能再创建TEST仓库）。
+![img](Typora+git自动同步你的笔记.assets/20170414204707499)
 
-   
+​    ![img](Typora+git自动同步你的笔记.assets/20170414204739187)
+
+  ![img](Typora+git自动同步你的笔记.assets/20170414204816539)
+
+​    第七步：在Github上创建一个Git仓库。
+
+ 你可以直接点New repository来创建，比如我创建了一个TEST2的仓库（因为我里面已经有了一个test的仓库，所以不能再创建TEST仓库）。
+
+   ![img](Typora+git自动同步你的笔记.assets/20170414205837600)
+
+​    第八步：在Github上创建好Git仓库之后我们就可以和本地仓库进行关联了，根据创建好的Git仓库页面的提示，可以在本地TEST仓库的命令行输入：
 
 
-        第八步：在Github上创建好Git仓库之后我们就可以和本地仓库进行关联了，根据创建好的Git仓库页面的提示，可以在本地TEST仓库的命令行输入：
 
-$ git remote add origin https://github.com/guyibang/TEST2.git
-         
+注意 如果是多个账号就需要 修改git地址
+
+git remote add origin    git@wwwguoguo520com.github.com:wwwguoguo520com/autoCommitGit.git
+
+如果是单个账号直接执行
+
+$ git remote add origin   git@github.com:wwwguoguo520com/autoCommitGit.git
+
+
+
+![image-20210325101816320](Typora+git自动同步你的笔记.assets/image-20210325101816320.png)
+
+
+
+
+
+
+
+​         ![img](Typora+git自动同步你的笔记.assets/20170414210648791)
+
         注意origin后面加的是你Github上创建好的仓库的地址。
-
-
-​        
 
       第九步：关联好之后我们就可以把本地库的所有内容推送到远程仓库（也就是Github）上了，通过：
 
@@ -259,24 +289,25 @@ $ git push -u origin master
 $ git push origin master
         上传项目的过程可能需要等一段时间，完成之后是这样的：
 
-​        
+​        ![img](Typora+git自动同步你的笔记.assets/20170414211408809)
 
         这时候你再重新刷新你的Github页面进入刚才新建的那个仓库里面就会发现项目已经成功上传了：
 
 
-​      
+​      ![img](Typora+git自动同步你的笔记.assets/20170414211925894)
 
         至此就完成了将本地项目上传到Github的整个过程。
     
       另外，这里有个坑需要注意一下，就是在上面第七步创建远程仓库的时候，如果你勾选了Initialize this repository with a README（就是创建仓库的时候自动给你创建一个README文件），那么到了第九步你将本地仓库内容推送到远程仓库的时候就会报一个failed to push some refs to  https://github.com/guyibang/TEST2.git的错。
 
 
-​      
+​      ![img](Typora+git自动同步你的笔记.assets/20170414211925894)
 
       这是由于你新创建的那个仓库里面的README文件不在本地仓库目录中，这时我们可以通过以下命令先将内容合并以下：
 
 $ git pull --rebase origin master
-        
+        ![img](Typora+git自动同步你的笔记.assets/20170414213315899)
+
        这时你再push就能成功了。
 
 
