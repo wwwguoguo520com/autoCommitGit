@@ -1,6 +1,6 @@
 
 
-# git多账号提交适配
+# git多账号提交适配（如果是一个账号请跳过）
 
 我们知道本地提交代码首先要把本地的ssh key 输入到github账号里面，如果只是一个账号我们很好处理，那如果是两个账号呢？好，我们来理下步骤：
 
@@ -201,7 +201,7 @@ git remote add origin git@u1.github.com:xxx/xxxxx.git
 
 
 ​       ![img](Typora+git自动同步你的笔记.assets/20170414162459663)
-       第三步：这时候你就可以把你的项目粘贴到这个本地Git仓库里面（粘贴后你可以通过git status来查看你当前的状态），然后通过git add把项目添加到仓库（或git add .把该目录下的所有文件添加到仓库，注意点是用空格隔开的）。在这个过程中你其实可以一直使用git status来查看你当前的状态。
+​       第三步：这时候你就可以把你的项目粘贴到这个本地Git仓库里面（粘贴后你可以通过git status来查看你当前的状态），然后通过git add把项目添加到仓库（或git add .把该目录下的所有文件添加到仓库，注意点是用空格隔开的）。在这个过程中你其实可以一直使用git status来查看你当前的状态。
 
 
 ​          ![img](Typora+git自动同步你的笔记.assets/20170414163732836)
@@ -281,7 +281,7 @@ $ git remote add origin   git@github.com:wwwguoguo520com/autoCommitGit.git
 ​         ![img](Typora+git自动同步你的笔记.assets/20170414210648791)
 
         注意origin后面加的是你Github上创建好的仓库的地址。
-
+    
       第九步：关联好之后我们就可以把本地库的所有内容推送到远程仓库（也就是Github）上了，通过：
 
 $ git push -u origin master
