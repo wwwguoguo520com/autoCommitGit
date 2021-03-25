@@ -1,6 +1,6 @@
 @echo off
 
-cd D:\guoguo520 
+cd D:\autoCommitGit 
 start /b git pull
 typora . TODO.md
 git add .
