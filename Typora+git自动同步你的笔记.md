@@ -499,15 +499,15 @@ WScript.CreateObject("WScript.Shell").Run ".sync.cmd",0
 
 打开“计划任务”，点击“任务计划程序库”，创建文件夹
 
-![img](Typora+git%E8%87%AA%E5%8A%A8%E5%90%8C%E6%AD%A5%E4%BD%A0%E7%9A%84%E7%AC%94%E8%AE%B0.assets/20180709173322654)
+![img](Typora+git%E8%87%AA%E5%8A%A8%E5%90%8C%E6%AD%A5%E4%BD%A0%E7%9A%84%E7%AC%94%E8%AE%B0.assets/20180709173322654.png)
 
 在“常规”中，勾上“使用最高权限运行”，修改“配置”
 
-![img](C:/Users/田/Nutstore/.nutstore_MTAwNzU5OTk4MjJAcXEuY29t/学习文档/从0开始带你成为消息中间件实战高手/总结/UNIX网络编程.assets/2018070917370822)
+![img](C:/Users/田/Nutstore/.nutstore_MTAwNzU5OTk4MjJAcXEuY29t/学习文档/从0开始带你成为消息中间件实战高手/总结/UNIX网络编程.assets/2018070917370822.png)
 
 点击“触发器”，设置“开始任务”，再进行“高级设置”
 
-![img](Typora+git%E8%87%AA%E5%8A%A8%E5%90%8C%E6%AD%A5%E4%BD%A0%E7%9A%84%E7%AC%94%E8%AE%B0.assets/20180709173826897)
+![img](Typora+git%E8%87%AA%E5%8A%A8%E5%90%8C%E6%AD%A5%E4%BD%A0%E7%9A%84%E7%AC%94%E8%AE%B0.assets/20180709173826897.png)
 
 点击“操作”，设置“程序或脚本”和“添加参数”（2者都是bat的文件目录），设置“起始于”（为bat的根目录）
 
